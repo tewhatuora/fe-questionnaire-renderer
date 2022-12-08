@@ -1,0 +1,17 @@
+{
+	"transform": {
+		"^.+\\.(t|j)sx?$": "ts-jest"
+	},
+	"moduleNameMapper": {
+		"^.+\\.svg$": "jest-svg-transformer"
+	},
+	"testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+	"moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+	"setupFilesAfterEnv": ["./src/setupTests.ts"],
+	"testEnvironment": "jsdom",
+	"preset": "ts-jest",
+	"moduleDirectories": [
+		"node_modules",
+		"src"
+	]
+}

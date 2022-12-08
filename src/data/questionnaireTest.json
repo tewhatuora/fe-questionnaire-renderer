@@ -1,0 +1,538 @@
+{
+  "resourceType": "Questionnaire",
+  "language": "en-NZ",
+  "version": "1.0.0",
+  "name": "DemoForm",
+  "title": "Demo Form",
+  "status": "_active",
+  "experimental": true,
+  "subjectType": ["consumer"],
+  "date": "2022-08-22T04:56:38.985Z",
+  "publisher": "Test NZ",
+  "url": "testUrl",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "workflow",
+        "display": "Workflow Setting"
+      },
+      "valueCodeableConcept": {
+        "text": "Consent"
+      }
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "NZ",
+          "display": "New Zealand"
+        }
+      ],
+      "text": "New Zealand"
+    }
+  ],
+  "purpose": "Demoing what we can do with a form builder",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/progressIndicatorExtension",
+      "id": "progressIndicatorExtension"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/progressIndicatorExtension",
+      "id": "cmsProjectIdExtension",
+      "valueString": "351800"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/themeExtension",
+      "id": "themeExtension",
+      "valueString": "myHealthAccount"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "step1",
+      "prefix": "step1.",
+      "text": "Step 1",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "step1.page1",
+          "prefix": "step1.page1.",
+          "text": "Page 1",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "step1.page1.input1",
+              "prefix": "step1.page1.input1.",
+              "text": "Are you happy?",
+              "type": "boolean",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/validation",
+                  "id": "validationExtension",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/validationRequired",
+                      "id": "validationRequired",
+                      "valueString": "Please answer if you're happy"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/content-management-system",
+                  "id": "cmsExtension",
+                  "valueCoding": {
+                    "system": "https://cms.com/",
+                    "version": "1",
+                    "code": "Test",
+                    "display": "Symptoms.Description.htmlContent"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "step1.page1.input2",
+              "prefix": "step1.page1.input2.",
+              "type": "display",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/content-management-system",
+                  "id": "cmsExtension",
+                  "valueCoding": {
+                    "system": "https://cms.com/",
+                    "version": "1",
+                    "code": "Test",
+                    "display": "Symptoms.Description.htmlContent"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "step1.page1.input3",
+              "prefix": "step1.page1.input3.",
+              "text": "How happy?",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueString": "Happy 1"
+                },
+                {
+                  "valueString": "Happy 2"
+                },
+                {
+                  "valueString": "Sad"
+                }
+              ]
+            },
+            {
+              "linkId": "step1.page1.input4",
+              "prefix": "step1.page1.input4.",
+              "repeats": true,
+              "required": true,
+              "text": "First name:",
+              "type": "string",
+              "maxLength": 5
+            },
+            {
+              "item": [
+                {
+                  "linkId": "step1.page1.input5a",
+                  "prefix": "step1.page1.input5a.",
+                  "text": "Reason:",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "linkId": "step1.page1.input5b",
+                  "prefix": "step1.page1.input5b.",
+                  "text": "Still sad:",
+                  "required": true,
+                  "type": "boolean"
+                }
+              ],
+              "linkId": "step1.page1.input5",
+              "prefix": "step1.page1.input5.",
+              "type": "group",
+              "enableBehavior": "all",
+              "repeats": true,
+              "enableWhen": [
+                {
+                  "question": "step1.step1_page1.step1_page1_input3",
+                  "operator": "=",
+                  "answerBoolean": "Sad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "step2",
+      "prefix": "step2.",
+      "text": "Step 2",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "step2.input4",
+          "prefix": "step2.input4.",
+          "text": "Last name:",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/validation",
+              "id": "validationExtension",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/validationRequired",
+                  "id": "validationRequired",
+                  "valueString": "Please provide your last name"
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/validationForbiddenCharacters",
+                  "id": "validationForbiddenCharacters"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "step2.input5",
+          "prefix": "step2.input5.",
+          "text": "Symptoms date:",
+          "type": "date",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/validation",
+              "id": "validationExtension",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/validationRequired",
+                  "id": "validationRequired"
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/validationDateMaxPeriod",
+                  "id": "validationDateMaxPeriod",
+                  "valueString": "Select a date in the last 4 days",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/validationDateMaxPeriodValue",
+                      "id": "validationDateMaxPeriodValue",
+                      "valueInteger": 4
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "step3",
+      "prefix": "step3.",
+      "text": "Step 3",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "step3.input6",
+          "prefix": "step3.input6.",
+          "text": "## Conditional page successful \\n\\nIt's working fine. \\n\\nChange your answer for the happiness question on the first page to change this page displaying or not.",
+          "type": "display"
+        },
+        {
+          "linkId": "step3.input7",
+          "prefix": "step3.input7.",
+          "text": "Comments:",
+          "type": "string"
+        }
+      ],
+      "enableWhen": [
+        {
+          "question": "step1.step1_page1.step1_page1_input1",
+          "operator": "=",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "step4",
+      "prefix": "step4.",
+      "text": "Step 4",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "step4.input8",
+          "prefix": "step4.input8.",
+          "text": "## Test display component \\n\\nText for the test.",
+          "type": "display"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input9a",
+              "prefix": "step4.input9a.",
+              "text": "Text input test:",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "linkId": "step4.input9b",
+              "prefix": "step4.input9b.",
+              "text": "Text input test second:",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "linkId": "step4.input9",
+          "prefix": "step4.input9.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input10a",
+              "prefix": "step4.input10a.",
+              "text": "Day picker test:",
+              "required": true,
+              "type": "date"
+            }
+          ],
+          "linkId": "step4.input10",
+          "prefix": "step4.input10.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input11a",
+              "prefix": "step4.input11a.",
+              "text": "Radio test:",
+              "required": true,
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueString": "Test a"
+                },
+                {
+                  "valueString": "Test b"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input11",
+          "prefix": "step4.input11.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input12a",
+              "prefix": "step4.input12a.",
+              "text": "Checkbox test:",
+              "required": true,
+              "type": "open-choice",
+              "answerOption": [
+                {
+                  "valueString": "Test 1"
+                },
+                {
+                  "valueString": "Test 2"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input12",
+          "prefix": "step4.input12.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input13a",
+              "prefix": "step4.input13a.",
+              "text": "Boolean test:",
+              "required": true,
+              "type": "boolean"
+            }
+          ],
+          "linkId": "step4.input13",
+          "prefix": "step4.input13.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input14a",
+              "prefix": "step4.input14a.",
+              "text": "Phone number test:",
+              "required": true,
+              "type": "string",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/phone-number",
+                  "valueContactDetail": {
+                    "telecom": [
+                      {
+                        "system": "phone"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input14",
+          "prefix": "step4.input14.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input15a",
+              "prefix": "step4.input15a.",
+              "text": "Divider test:",
+              "required": true,
+              "type": "display",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/divider",
+                  "id": "dividerExtension"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input15",
+          "prefix": "step4.input15.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input16a",
+              "prefix": "step4.input16a.",
+              "text": "Date input test:",
+              "required": true,
+              "type": "date",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/date-input",
+                  "id": "dateInputExtension"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input16",
+          "prefix": "step4.input16.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input17a",
+              "prefix": "step4.input17a.",
+              "text": "Address test:",
+              "required": true,
+              "type": "string",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/address",
+                  "id": "addressExtension"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input17",
+          "prefix": "step4.input17.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input18a",
+              "prefix": "step4.input18a.",
+              "text": "Checkbox with no option test:",
+              "required": true,
+              "type": "open-choice",
+              "answerOption": [
+                {
+                  "valueString": "Test 3"
+                },
+                {
+                  "valueString": "Test 4"
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/checkbox-no-option",
+                  "id": "checkboxGroupWithNoOption"
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/no-option",
+                  "id": "noOptionExtension",
+                  "valueString": "Test No"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input18",
+          "prefix": "step4.input18.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input19a",
+              "prefix": "step4.input19a.",
+              "text": "Date of birth test:",
+              "required": true,
+              "type": "date",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/date-of-birth",
+                  "id": "dateOfBirthExtension"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input19",
+          "prefix": "step4.input19.",
+          "type": "group"
+        },
+        {
+          "item": [
+            {
+              "linkId": "step4.input20a",
+              "prefix": "step4.input20a.",
+              "text": "Solo checkbox test",
+              "required": true,
+              "type": "open-choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/solo-checkbox",
+                  "id": "soloCheckboxExtension"
+                }
+              ]
+            }
+          ],
+          "linkId": "step4.input20",
+          "prefix": "step4.input20.",
+          "type": "group"
+        }
+      ],
+      "enableWhen": [
+        {
+          "question": "step1.step1_page1.step1_page1_input1",
+          "operator": "=",
+          "answerBoolean": true
+        }
+      ]
+    }
+  ]
+}

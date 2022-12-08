@@ -1,0 +1,37 @@
+{
+  "404": {
+    "Title": {
+      "htmlContent": "<h2>We’re sorry. Aroha mai.</h2><p></p><h2>We can’t find that page anywhere.</h2>"
+    }
+  },
+  "Completed": {
+    "Title": {
+      "htmlContent": "<h1>Thank you. We have received your submission.</h1>"
+    },
+    "Sub-Title": {
+      "htmlContent": "<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>"
+    },
+    "Description": {
+      "htmlContent": "<h3>What happens next</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><h3>Help and advice</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p><a href=\"https://www.google.com\" >Google</a></p><h3>Other support</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+    }
+  },
+  "Landing Page": {
+    "Introduction": {
+      "htmlContent": "<p>Welcome on this questionnaire.</p>"
+    },
+    "Sub-Introduction": {
+      "htmlContent": "<p>Another random content.</p>"
+    }
+  },
+  "Privacy Agreement": {
+    "Introduction": {
+      "htmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit:</p><ul><li>consectetur adipiscing elit</li><li>consectetur adipiscing elit</li><li>consectetur adipiscing elit</li><li>consectetur adipiscing elit</li><li>consectetur adipiscing elit</li><li>consectetur adipiscing elit</li></ul><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/><br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+    },
+    "Statement-Link": {
+      "htmlContent": "<a href='/privacy'>Privacy Statement</a>"
+    },
+    "Links": {
+      "htmlContent": "<p><strong>If you need assistance with this form:</strong></p><p>You can email<a href=\"mailto:text@test.co.nz\"><br/>test@test.co.nz</a><br/>or call <a href=\"tel:0800800800\">0800 800 800</a>.</p>"
+    }
+  }
+}

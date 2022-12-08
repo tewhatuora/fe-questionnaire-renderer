@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Running tests requires 'react' and 'react-dom' in the dev dependencies. However, that prevents using the lib to test locally as versions will conflict
+# See how it'll behave when published
+# yarn lint-staged
