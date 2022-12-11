@@ -152,8 +152,6 @@ interface MaintenanceData {
   }}
   questionnaireData={questionnaire}
   unauthenticatedPaths={[
-    `/${questionnaireId}`,
-    `/${questionnaireId}/privacy`,
     `/${questionnaireId}/`,
     `/${questionnaireId}/privacy/`
   ]}

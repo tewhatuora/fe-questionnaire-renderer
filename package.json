@@ -1,15 +1,15 @@
 {
-  "name": "@abletech/fe-questionnaire-renderer",
+  "name": "@tewhatuora/fe-questionnaire-renderer",
   "version": "0.1.0",
   "description": "",
   "author": "Abletech <hello@abletech.co.nz>",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abletech/fe-questionnaire-renderer.git"
+    "url": "git+https://github.com/tewhatuora/fe-questionnaire-renderer.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/abletech"
+    "registry": "https://npm.pkg.github.com/tewhatuora"
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
